@@ -1,0 +1,84 @@
+JDK 9 特性
+
+在线文档
+https://docs.oracle.com/javase/9/
+
+模块化系统（modularity） ****************
+		简单说：用模块来管理各个package，从业务分开，模块与模块分开
+		
+shell命令 工具****************
+		jshell 命令  
+		退出/exit
+
+多版本兼容jar包
+
+接口的私有方法 ****************
+		接口有静态方法
+		接口可以private
+		接口有方法体了
+		
+		
+钻石操作符的使用升级  ****************
+			//JDK 7 中的特性<> 不写也可以的
+		ArrayList<String> list=new ArrayList<>();
+		//JDK 9以上版本 <>钻石操作符与匿名类在java 8中不能共存，
+		Comparator<Object> com=new Comparator<>() {
+			
+			@Override
+			public int compare(Object o1, Object o2) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+		};
+
+语法改进：try语句  ****************
+
+	/*
+		 * JDK 9特性
+		 *  try() 自动关闭的资源实例化可以放在try括号里
+		 */
+		InputStreamReader reader=new InputStreamReader(System.in);
+		try(reader){
+			char[] c=new char[20];
+			int len;
+			if((len=reader.read(c))!=-1) {
+				String str = new String(c,0,len);
+				System.out.println(str);
+			}
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+
+
+String存储结构变更 ****************
+ 	    @Stable
+    private final byte[] value;
+    String 存储改为byte[]，节约了一些空间
+    
+
+集合特性：of（）
+		/*
+	 * JDK 9 集合工厂方法，创建只读集合 OF方法
+	 * 集合只能读不能写了
+	 */
+	public static void main(String[] args) {
+		List<Integer> list = List.of(1,2,3,4);
+//		list.add("5");//如果进行修改是不允许的
+		System.out.println(list);
+	}
+
+增强Stream API
+	增加了4个新方法
+	1.takewhile
+	2.dropWhile
+	3.ofNullable
+	4.itrate
+
+全新的http客户端API
+Deprecated相关的API
+
+
+javadoc的HTML5支持
+JavaScript引擎升级nashorn
+java 的动态编译器
