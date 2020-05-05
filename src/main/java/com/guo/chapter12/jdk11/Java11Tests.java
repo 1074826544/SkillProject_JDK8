@@ -64,13 +64,13 @@ public class Java11Tests {
 	 * Java 11 特性3 局部变量类型推断的升级 从10引进来的
 	 */
 	public static void main3(String[] args) {
-//		var
+//		var   sssssssssssssssssssssssss
 	}
 	
 	/*
-	 * Java 11 特性4 HttpClient 替换原有的httpUrlConnection
+	 * Java 11 特性4 HttpClient 替换原有的httpUrlConnection ,,,,,,,,,,,,,
 	 */
-	public static void main4(String[] args) {
+	public static void main(String[] args) {
 		try {
 			HttpClient client=HttpClient.newHttpClient();
 			HttpRequest request = HttpRequest.newBuilder(URI.create("http://192.168.1.1/login.html")).build();
@@ -78,6 +78,7 @@ public class Java11Tests {
 			HttpResponse<String> response = client.send(request, responseBodyHandler);
 			String body = response.body();
 			System.out.println(body);
+			System.out.println("ssssssssssssssssssssssssssss");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

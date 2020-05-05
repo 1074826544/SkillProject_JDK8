@@ -1,6 +1,5 @@
 package com.guo.chapter08.methodreference;
 
-import sun.security.util.Length;
 
 /**
  * @author guoli

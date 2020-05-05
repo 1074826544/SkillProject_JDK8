@@ -26,8 +26,13 @@ public class Java9_Stream {
 		
 		System.out.println("takeWhile");
 		//判断数组里小于40的元素		
-		list.stream().takeWhile(x->x< 40 ).forEach(System.out::println);
-		
+		for (Integer integer : list) {
+			if (integer >= 40) {
+				break;
+			}
+			System.out.println(integer);
+		}
+
 		System.out.println("dropWhile");
 		//返回剩余的操作与 takeWhile 相反
 		list.stream().dropWhile(x->x< 40 ).forEach(System.out::println);
@@ -49,4 +54,7 @@ public class Java9_Stream {
 		
 		
 	}
+	
 }
+
+
